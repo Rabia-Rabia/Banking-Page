@@ -11,16 +11,16 @@ document.getElementById('addDeposit').addEventListener('click', function() {
     // update deposit amount
     const currentDeposit = document.getElementById('current-Deposit');
     const currentDepositText = currentDeposit.innerText;
-    const newCurrentdepositText = parseInt(currentDepositText);
-    const totalCurrentDeposit = newDepositAmount + newCurrentdepositText;
+    const newCurrentdeposit = parseInt(currentDepositText);
+    const totalCurrentDeposit = newDepositAmount + newCurrentdeposit;
     currentDeposit.innerText = totalCurrentDeposit;
 
     // update current balance
 
     const currentBalance = document.getElementById('currentBalance');
     const currentBalanceText = currentBalance.innerText;
-    const NewCurrentBalanceText = parseInt(currentBalanceText);
-    const totalCurrentBalance = NewCurrentBalanceText + totalCurrentDeposit;
+    const newCurrentBalance = parseInt(currentBalanceText);
+    const totalCurrentBalance = newCurrentBalance + newDepositAmount;
     currentBalance.innerText = totalCurrentBalance;
     depositAmount.value = '';
 
