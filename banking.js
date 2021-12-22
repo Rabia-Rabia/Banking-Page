@@ -2,9 +2,9 @@
 document.getElementById('addDeposit').addEventListener('click', function() {
     const depositAmount = document.getElementById('deposit-Amount');
     const depositAmountText = depositAmount.value;
-    const newDepositAmountText = parseInt(depositAmountText);
+    const newDepositAmount = parseInt(depositAmountText);
     const number = parseInt(depositAmountText);
-    if (newDepositAmountText != number) {
+    if (newDepositAmount != number) {
         window.alert('Please enter valid amount');
     }
 
@@ -12,15 +12,15 @@ document.getElementById('addDeposit').addEventListener('click', function() {
     const currentDeposit = document.getElementById('current-Deposit');
     const currentDepositText = currentDeposit.innerText;
     const newCurrentdepositText = parseInt(currentDepositText);
-    const totalCurrentDepositText = newDepositAmountText + newCurrentdepositText;
-    currentDeposit.innerText = totalCurrentDepositText;
+    const totalCurrentDeposit = newDepositAmount + newCurrentdepositText;
+    currentDeposit.innerText = totalCurrentDeposit;
 
     // update current balance
 
     const currentBalance = document.getElementById('currentBalance');
     const currentBalanceText = currentBalance.innerText;
     const NewCurrentBalanceText = parseInt(currentBalanceText);
-    const totalCurrentBalance = NewCurrentBalanceText + totalCurrentDepositText;
+    const totalCurrentBalance = NewCurrentBalanceText + totalCurrentDeposit;
     currentBalance.innerText = totalCurrentBalance;
     depositAmount.value = '';
 
@@ -30,24 +30,23 @@ document.getElementById('addDeposit').addEventListener('click', function() {
 document.getElementById('addwithdraw').addEventListener('click', function() {
     const withdrawAmount = document.getElementById('withdrawAmount');
     const withdrawAmountText = withdrawAmount.value;
-    const newWithdrawAmountTotal = parseInt(withdrawAmountText);
+    const newWithdrawAmount = parseInt(withdrawAmountText);
 
     // Update Withdraw Amount
 
     const currentWithdraw = document.getElementById('currentWithdraw');
     const previousWithdrawText = currentWithdraw.innerText;
     const newPreviousWithdrawText = parseInt(previousWithdrawText);
-    const newWithdrawTotal = newPreviousWithdrawText + newWithdrawAmountTotal;
+    const newWithdrawTotal = newPreviousWithdrawText + newWithdrawAmount;
     currentWithdraw.innerText = newWithdrawTotal;
 
     // update new Balance
 
     const currentBalance = document.getElementById('currentBalance');
     const previousCurrentBalance = currentBalance.innerText;
-    const PreviousCurrentBalance = parseInt(previousCurrentBalance);
     const newPreviousCurrentBalance = parseInt(previousCurrentBalance);
-    const totalnewBalance = newPreviousCurrentBalance - newWithdrawTotal;
-    currentBalance.innerText = totalnewBalance;
+    const totalNewBalance = newPreviousCurrentBalance - newWithdrawAmount;
+    currentBalance.innerText = totalNewBalance;
     withdrawAmount.value = '';
 
 });
